@@ -1,0 +1,53 @@
+{
+  "name": "postql-js",
+  "version": "0.0.0",
+  "description": "Parses and validates PostQL queries",
+  "keywords": [
+    "postql",
+    "parse",
+    "parser"
+  ],
+  "main": "cjs/index.js",
+  "module": "esm/index.mjs",
+  "scripts": {
+    "build": "rollup --config",
+    "ci": "yarn build && yarn lint-check && yarn test",
+    "lint": "prettier-standard --lint 'esm/**/*.mjs'",
+    "lint-check": "prettier-standard --lint --check 'esm/**/*.mjs'",
+    "prepack": "yarn build",
+    "test": "ava",
+    "watch": "concurrently \"onchange --initial 'esm/**/*.mjs' -- yarn lint-check\" \"ava --watch --fail-fast\""
+  },
+  "ava": {
+    "babel": false,
+    "files": [
+      "esm/**/*.spec.mjs"
+    ],
+    "extensions": [
+      "mjs"
+    ],
+    "require": [
+      "esm"
+    ]
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "repository": "https://github.com/mmiller42/postql-js.git",
+  "homepage": "https://github.com/mmiller42/postql-js",
+  "bugs": "https://github.com/mmiller42/postql-js/issues",
+  "author": "Matt Miller <me@mmiller.me>",
+  "license": "MIT",
+  "dependencies": {
+    "flora-sql-parser": "^0.9.4",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "concurrently": "^5.0.1",
+    "esm": "^3.2.25",
+    "onchange": "^6.1.0",
+    "prettier-standard": "^16.1.0",
+    "rollup": "^1.27.13"
+  }
+}

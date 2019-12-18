@@ -1,0 +1,15 @@
+# Coverage
+*.lcov
+.nyc_output
+coverage
+
+# Dependencies
+node_modules
+.yarn-integrity
+
+# IDE files
+.vscode
+
+# Logs
+*.log*
+.node_repl_history

@@ -1,0 +1,20 @@
+# Compiled files
+cjs
+
+# Coverage
+*.lcov
+.nyc_output
+coverage
+
+# Dependencies
+node_modules
+.yarn-integrity
+
+# IDE and OS files
+.DS_Store
+.idea
+.vscode
+
+# Logs
+*.log*
+.node_repl_history
